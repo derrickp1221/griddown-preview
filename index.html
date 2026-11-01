@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#3d4f3f">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; media-src 'self' blob:; style-src 'self' 'unsafe-inline'; font-src 'self'; script-src 'self'; connect-src 'self' https://jxsptfxsbmvhjhbbyajj.supabase.co wss://jxsptfxsbmvhjhbbyajj.supabase.co capacitor: http://localhost https://localhost">
+<title>Grid Down: 100-Day Prep</title>
+  <script type="module" crossorigin src="./assets/index-l_gInpgu.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-DD4qAfaB.css">
+</head>
+<body>
+<div id="welcome" hidden>
+  <div class="login-top"><div class="wrap">
+    <h1>Grid Down</h1>
+    <p>100-day prep for when the power goes out. Checklists, a buy list, a daily routine, and guides for water, fire, food and warmth. Everything works offline.</p>
+  </div></div>
+  <div class="wrap">
+    <form class="login-card" id="wl-form" novalidate>
+      <h2>Set up your plan</h2>
+      <div class="field"><label for="wl-name">Family name</label><input id="wl-name" autocomplete="family-name" placeholder="The Johnson Family"></div>
+      <div class="field"><label for="wl-people">People in your home</label><input id="wl-people" type="number" inputmode="numeric" min="1" max="20" value="5"></div>
+      <div class="login-actions"><button class="btn" type="submit">Start my plan</button></div>
+      <button class="linkbtn" id="wl-restore" type="button">I already have a backup. Sign in.</button>
+      <p class="fine">No account needed. Your plan is saved on this phone. This app gives general information, not medical, legal or professional safety advice.</p>
+    </form>
+  </div>
+</div>
+
+<div id="app" hidden>
+  <header><div class="wrap">
+    <div class="toprow"><h1>Grid Down</h1><div class="acct"><span id="hhname"></span><button class="ghost" id="acct-btn" type="button">Account</button></div></div>
+    <div class="family"><label for="people">People in home</label><div class="stepper"><button id="minus" type="button" aria-label="One fewer person">−</button><input id="people" inputmode="numeric" value="5" aria-label="Number of people"><button id="plus" type="button" aria-label="One more person">+</button></div><span class="saved" id="saved"></span></div>
+  </div></header>
+  <nav class="tabs" role="tablist"><div class="tabs-inner" id="tabs"></div></nav>
+  <main id="views"></main>
+</div>
+
+<div id="choice" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="choice-title">
+  <div class="modal-card">
+    <h2 id="choice-title">Which plan do you want to keep?</h2>
+    <p>This phone already has a plan, and your account has a different backed-up plan. Pick one. The other will be replaced.</p>
+    <div class="login-actions">
+      <button class="btn" id="choice-cloud" type="button">Use my backup</button>
+      <button class="btn alt" id="choice-local" type="button">Keep this phone's plan</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite" hidden></div>
+</body>
+</html>
